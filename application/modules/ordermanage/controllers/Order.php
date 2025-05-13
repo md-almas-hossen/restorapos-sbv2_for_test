@@ -9863,10 +9863,10 @@ class Order extends MX_Controller
 		$chng_amt = (float)$this->input->post('change_amount', true);
 		$total_pm = array_sum($payamonts);
 		
-		if ($total_pm - $chng_amt != $grandtotal) {
-			$this->session->set_flashdata('exception', display('please_try_again'));
-			redirect('ordermanage/order/pos_invoice');
-		}
+//		if ($total_pm - $chng_amt != $grandtotal) {
+//			$this->session->set_flashdata('exception', display('please_try_again'));
+//			redirect('ordermanage/order/pos_invoice');
+//		}
 
 
 			// onlineorder
@@ -9992,17 +9992,19 @@ class Order extends MX_Controller
 			}
 
 			/*******end Point**************/
+        $billinfo	   = $this->order_model->billinfo($orderid);
 			$getdiscount = $this->order_model->orderdiscount($orderid);
 			$allitemdiscount = 0;
 			$discounttext = $this->input->post('discounttext', true);
 
 			if ($getdiscount) {
-				foreach ($getdiscount as $itemdiscount) {
-					$idscount = ($itemdiscount->price * $itemdiscount->itemdiscount) / 100;
-					$idscount2 = $itemdiscount->menuqty * $idscount;
-					$allitemdiscount = $allitemdiscount + $idscount2;
-				}
-				$discounttext = $prebillinfo->discountnote;
+//				foreach ($getdiscount as $itemdiscount) {
+//					$idscount = ($itemdiscount->price * $itemdiscount->itemdiscount) / 100;
+//					$idscount2 = $itemdiscount->menuqty * $idscount;
+//					$allitemdiscount = $allitemdiscount + $idscount2;
+//				}
+//				$discounttext = $prebillinfo->discountnote;
+                $allitemdiscount = $billinfo->allitemdiscount;
 			}
 			//Al-amin
 			$discount = $discount + @$membership_discount;

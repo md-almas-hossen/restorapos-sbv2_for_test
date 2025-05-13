@@ -1706,7 +1706,16 @@ class Order_model extends CI_Model
 		} else {
 			$where = "order_menu.order_id = '" . $id . "' ";
 		}
-		$sql = "SELECT order_menu.row_id,order_menu.order_id,order_menu.groupmid as menu_id,order_menu.itemdiscount,order_menu.notes,order_menu.add_on_id,order_menu.tpid,order_menu.tpassignid,order_menu.tpprice,order_menu.tpposition,order_menu.addonsqty,order_menu.groupvarient as varientid,order_menu.addonsuid,order_menu.qroupqty as menuqty,order_menu.price as price,order_menu.isgroup,order_menu.food_status,order_menu.allfoodready,order_menu.isupdate,item_foods.ProductName,item_foods.is_customqty,item_foods.price_editable,variant.variantid, variant.variantName, variant.price as mprice FROM order_menu LEFT JOIN item_foods ON order_menu.groupmid=item_foods.ProductsID LEFT JOIN variant ON order_menu.groupvarient=variant.variantid WHERE {$where} AND order_menu.isgroup=1 Group BY order_menu.groupmid UNION SELECT order_menu.row_id,order_menu.order_id,order_menu.menu_id as menu_id,order_menu.itemdiscount,order_menu.notes,order_menu.add_on_id,order_menu.tpid,order_menu.tpassignid,order_menu.tpprice,order_menu.tpposition,order_menu.addonsqty,order_menu.varientid as varientid,order_menu.addonsuid,order_menu.menuqty as menuqty,order_menu.price as price,order_menu.isgroup,order_menu.food_status,order_menu.allfoodready,order_menu.isupdate, item_foods.ProductName,item_foods.is_customqty,item_foods.price_editable,variant.variantid, variant.variantName, variant.price as mprice FROM order_menu LEFT JOIN item_foods ON order_menu.menu_id=item_foods.ProductsID LEFT JOIN variant ON order_menu.varientid=variant.variantid WHERE {$where} AND order_menu.isgroup=0";
+        $sql = "SELECT order_menu.row_id,order_menu.order_id,order_menu.groupmid as menu_id,order_menu.itemdiscount,order_menu.notes,order_menu.add_on_id,order_menu.tpid,
+       order_menu.tpassignid,order_menu.tpprice,order_menu.tpposition,order_menu.addonsqty,order_menu.groupvarient as varientid,order_menu.addonsuid,order_menu.qroupqty as menuqty,order_menu.price as price,
+       order_menu.isgroup,order_menu.food_status,order_menu.allfoodready,order_menu.isupdate,item_foods.ProductName,item_foods.is_customqty,item_foods.price_editable,variant.variantid, variant.variantName, 
+       variant.price as mprice FROM order_menu LEFT JOIN item_foods ON order_menu.groupmid=item_foods.ProductsID LEFT JOIN variant ON order_menu.groupvarient=variant.variantid
+       WHERE {$where} AND order_menu.isgroup=1 Group BY order_menu.groupmid UNION SELECT order_menu.row_id,order_menu.order_id,order_menu.menu_id as menu_id,order_menu.itemdiscount,
+      order_menu.notes,order_menu.add_on_id,order_menu.tpid,order_menu.tpassignid,order_menu.tpprice,
+      order_menu.tpposition,order_menu.addonsqty,order_menu.varientid as varientid,order_menu.addonsuid,
+      order_menu.menuqty as menuqty,order_menu.price as price,order_menu.isgroup,order_menu.food_status,order_menu.allfoodready,order_menu.isupdate, item_foods.ProductName,item_foods.is_customqty,
+      item_foods.price_editable,variant.variantid, variant.variantName, variant.price as mprice FROM order_menu LEFT JOIN item_foods ON order_menu.menu_id=item_foods.ProductsID 
+          LEFT JOIN variant ON order_menu.varientid=variant.variantid WHERE {$where} AND order_menu.isgroup=0";
 		$query = $this->db->query($sql);
 
 		return $query->result();

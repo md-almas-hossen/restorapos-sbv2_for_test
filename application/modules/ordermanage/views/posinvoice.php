@@ -484,9 +484,9 @@
 				  $totalamount=0;
 					  $subtotal=0;
 					  $total=$orderinfo->totalamount;
-					  $pdiscount=0;
 					foreach ($iteminfo as $item){
 						$i++;
+                        $pdiscount=0;
 						if($item->price>0){
 							$itemprice= $item->price*$item->menuqty;
 							$singleprice=$item->price;

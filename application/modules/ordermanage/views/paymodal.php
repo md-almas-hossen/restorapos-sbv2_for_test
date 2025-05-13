@@ -88,6 +88,7 @@ echo form_open('', 'method="get" class="navbar-search" name="sdf" id="paymodal-m
                         $currentDate = new DateTime();
                         foreach ($allitems as $item) {
                             $i++;
+                            $ptdiscount = 0;
                             if ($item->price > 0) {
                                 $itemprice = $item->price * $item->menuqty;
                                 $singleprice = $item->price;

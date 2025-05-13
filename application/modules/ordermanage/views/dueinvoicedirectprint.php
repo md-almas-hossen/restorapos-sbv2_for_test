@@ -898,7 +898,8 @@ $recalculate_vat = $this->db->select('recalculate_vat')->from('tbl_invoicesettin
                             <?php if ($currency->position == 1) {
                                 echo $currency->curr_icon;
                             } ?>
-                            <?php echo numbershow($billinfo->bill_amount - $discount, $settinginfo->showdecimal); ?>
+                            <?php //echo numbershow($billinfo->bill_amount - $discount, $settinginfo->showdecimal); ?>
+                            <?php echo numbershow($billinfo->bill_amount, $settinginfo->showdecimal); ?>
                             <?php if ($currency->position == 2) {
                                 echo $currency->curr_icon;
                             } ?>
