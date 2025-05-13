@@ -561,7 +561,7 @@
                 <?php //echo (!empty($intinfo->logo)?$intinfo->logo:"");?>
                 <img src="<?php echo base_url();?><?php echo $storeinfo->logo?>" id="previewImg" alt="" width="50%" class="imgprev">
                 <div id="headerinfo" class="line-height fontsizepx">
-                    <h4 class="line-height fontsizepx text-center store_name" id="bhojon_name"><?php echo (!empty($intinfo->store_name)?$intinfo->store_name:"");?> </h4>
+                    <h4 class="line-height text-center store_name" id="bhojon_name"><strong><?php echo (!empty($intinfo->store_name)?$intinfo->store_name:"");?></strong></h4>
                     <p class="line-height fontsizepx my-0 bhojon_address text-center" id="bhojon_address"><?php echo $storeinfo->address;?></p>
                     <p class="my-0 text-center linehight a4phn_number"><strong>Mobile: <?php echo $storeinfo->phone;?></strong></p>
                     <p class="my-0 text-center linehight pweb"><strong class="domain"><?php echo (!empty($intinfo->websitetext)?$intinfo->websitetext:base_url());?></strong></p>
@@ -614,13 +614,13 @@
             <div class="invoice-footer mb-15 line-height fontsizepx">
                 <div class="row-data subtotal_level_hide line-height fontsizepx">
                     <div class="item-info line-height fontsizepx">
-                        <h5 class="item-title subtotal_level_prev  line-height fontsizepx"><?php echo display('subtotal')?></h5>
+                        <h5 class="item-title subtotal_level_prev  line-height fontsizepx"><strong><?php echo display('subtotal')?></strong></h5>
                     </div>
                     <h5 class="my-5 line-height fontsizepx ">$100.00</h5>
                 </div>
                 <div class="row-data vat_hide line-height fontsizepx">
                     <div class="item-info line-height fontsizepx">
-                        <h5 class="item-title vat_prev line-height fontsizepx"><?php echo display('vat_tax')?>(10%)</h5>
+                        <h5 class="item-title vat_prev line-height fontsizepx"><strong><?php echo display('vat_tax')?>(10%)</strong></h5>
                     </div>
                     <h5 class="my-5 line-height fontsizepx">$50.00</h5>
                 </div>
@@ -632,7 +632,7 @@
                 </div>
                 <div class="row-data tax_hide line-height fontsizepx">
                     <div class="item-info line-height fontsizepx">
-                        <h5 class="item-title line-height fontsizepx"><?php echo display('tax')?></h5>
+                        <h5 class="item-title line-height fontsizepx"><strong><?php echo display('tax')?></strong></h5>
                     </div>
                     <h5 class="my-5 line-height fontsizepx">$100.00</h5>
                 </div>
@@ -659,7 +659,7 @@
 
                 <div class="row-data total_due_hide line-height fontsizepx">
                     <div class="item-info">
-                        <h5 class="item-title total_due_prev line-height fontsizepx"><?php echo display('total_due')?></h5>
+                        <h5 class="item-title total_due_prev line-height fontsizepx"><strong><?php echo display('total_due')?></strong></h5>
                     </div>
                     <h5 class="my-5 line-height fontsizepx">$10.00</h5>
                 </div>
@@ -689,18 +689,18 @@
                 <div class="middle-data line-height fontsizepx">
 
                     <div class="item-info gap_right table_level_hide line-height fontsizepx">
-                        <span class="item-title table_level_prev line-height fontsizepx"><?php echo display('table');?></span>10
+                        <span class="item-title table_level_prev line-height fontsizepx"><strong><?php echo display('table');?> 10</strong></span>
                     </div>
 
 
                     <div class="item-info order_no_hide line-height fontsizepx">
-                        <span class="item-title line-height fontsizepx"><span class="order_no_prev"><?php echo display('orderno')?></span></span>1001
+                        <span class="item-title line-height fontsizepx"><span class="order_no_prev"><strong><?php echo display('orderno')?> 1001</strong></span></span>
                     </div>
 
                 </div>
                 <div class="line-height fontsizepx middle-data">
                     <div class="line-height fontsizepx text-center waiter_by_prev">
-                        <span class="line-height fontsizepx item-title" style="font-size:16px; font-weight:400;"><?php echo (!empty($intinfo->waiter)?$intinfo->waiter:"");?></strong>
+                        <span class="line-height fontsizepx item-title" style="font-size:16px; font-weight:400;"><strong><?php echo (!empty($intinfo->waiter)?$intinfo->waiter:"");?></strong></span>
                     </div>
                 </div>
                 <div class="middle-data payment_status_hide line-height fontsizepx">
@@ -886,7 +886,7 @@
                 <div class="bill-pos-mini__logo border line-height fontsizepx" align="center"><img src="<?php echo base_url();?><?php echo $storeinfo->logo?>" class="img img-responsive imgprev" alt=""></div>
             </div>
             <div class="px-4">
-                <p class="text-note text-center mb-3 store_name line-height fontsizepx" id="bhojon_name"><?php echo (!empty($intinfo->store_name)?$intinfo->store_name:"");?></p>
+                <p class="text-note text-center mb-3 store_name line-height fontsizepx" id="bhojon_name"><strong><?php echo (!empty($intinfo->store_name)?$intinfo->store_name:"");?></strong></p>
                 <p class="text-note text-center mb-3 bhojon_address line-height fontsizepx" id="bhojon_address"><?php echo $storeinfo->address;?></p>
                 <p class="text-note text-center mb-3 a4phn_number line-height fontsizepx"><strong>Mobile: <?php echo $storeinfo->phone;?></strong></p>
                 <p class="text-note text-center mb-3 pweb line-height fontsizepx"><strong class="domain"><?php echo (!empty($intinfo->websitetext)?$intinfo->websitetext:base_url());?></strong></p>
@@ -1537,10 +1537,16 @@
         var dlevel=$('#date_level').val();
         $(".dlevel").text(dlevel);
     }
-    function store_lavel(){
-        var store_name=$('#store_name').val();
-        $(".store_name").text(store_name);
+    // function store_lavel(){
+    //     var store_name=$('#store_name').val();
+    //     $(".store_name").text(store_name);
+    // }
+
+    function store_lavel() {
+        var store_name = $('#store_name').val();
+        $(".store_name").html('<strong>' + store_name + '</strong>');
     }
+
     function invoiceLevel(){
         var invoice_level=$('#invoice_level').val();
         //  console.log(invoice_level);
@@ -1548,7 +1554,8 @@
     }
     function subtotalLevel(){
         var subtotalLevel=$('#subtotal_level').val();
-        $(".subtotal_level_prev").text(subtotalLevel);
+        // $(".subtotal_level_prev").text(subtotalLevel);
+        $(".subtotal_level_prev").html('<strong>' + subtotalLevel + '</strong>');
     }
     function serviceCharge(){
         var service_charge=$('#service_charge').val();
@@ -1557,7 +1564,8 @@
     function vatlevel(){
         var vat_level=$('#vat_level').val();
         // console.log('vat_level');
-        $(".vat_prev").text(vat_level);
+        // $(".vat_prev").text(vat_level);
+        $(".vat_prev").html('<strong>' + vat_level + '</strong>');
     }
     function discountLevel(){
         var discount_level=$('#discount_level').val();
@@ -1577,7 +1585,8 @@
     function totalDue(){
         var total_due=$('#total_due').val();
         // console.log('vat_level');
-        $(".total_due_prev").text(total_due);
+        // $(".total_due_prev").text(total_due);
+        $(".total_due_prev").html('<strong>' + total_due + '</strong>');
     }
     function change_dueLevel(){
         var change_due_level=$('#change_due_level').val();
@@ -1599,21 +1608,30 @@
         // console.log('vat_level');
         $(".bill_by_prev").text(billingTo);
     }
+
     function waiterBy(){
         var waiterTo=$('#waiter_by').val();
-        // console.log('vat_level');
-        $(".waiter_by_prev").text(waiterTo);
+        $(".waiter_by_prev").html('<strong>' + waiterTo + '</strong>');
     }
+
+    // function waiterBy(){
+    //     var waiterTo=$('#waiter_by').val();
+    //     // console.log('vat_level');
+    //     $(".waiter_by_prev").text(waiterTo);
+    // }
 
     function orderNo(){
         var order_no=$('#order_no').val();
         // console.log(order_no);
-        $(".order_no_prev").text(order_no);
+        // $(".order_no_prev").text(order_no);
+        $(".order_no_prev").html('<strong>' + order_no + '</strong>');
+
     }
     function tableLevel(){
         var order_no=$('#table_level').val();
         // console.log(order_no);
-        $(".table_level_prev").text(order_no);
+        // $(".table_level_prev").text(order_no);
+        $(".table_level_prev").html('<strong>' + order_no + '</strong>');
     }
     function paymentStatus(){
         var payment_status=$('#payment_status').val();
@@ -2497,4 +2515,3 @@
         color: #fff !important;
     }
 </style>
-

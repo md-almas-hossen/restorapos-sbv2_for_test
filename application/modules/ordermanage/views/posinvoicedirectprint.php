@@ -1,15 +1,15 @@
 <?php
 
- /*
- new code by MKar starts here...
-    vat_recalculate = 0 => not recalculated,
-    vat_recalculate = 1 => recalculated
- new code by MKar ends here...
- */
+/*
+new code by MKar starts here...
+   vat_recalculate = 0 => not recalculated,
+   vat_recalculate = 1 => recalculated
+new code by MKar ends here...
+*/
 
- $recalculate_vat = $this->db->select('recalculate_vat')->from('tbl_invoicesetting')->get()->row()->recalculate_vat;
+$recalculate_vat = $this->db->select('recalculate_vat')->from('tbl_invoicesetting')->get()->row()->recalculate_vat;
 
- ?>
+?>
 
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('application/modules/ordermanage/assets/css/pos_token.css'); ?>">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('application/modules/ordermanage/assets/css/pos_print.css'); ?>">
@@ -415,24 +415,64 @@
                     <img src="<?php echo base_url(); ?><?php echo (!empty($posinvoiceTemplate->logo) ? $posinvoiceTemplate->logo : $storeinfo->logo) ?>" alt="" style="max-height: 100px !important;max-width:250px;margin-bottom: 5px;padding-top: 10px;">
                 <?php }
                 if ($posinvoiceTemplate->company_name_show == 1) { ?>
-                    <h4 style="font-size:22px;" class="linehight fontsizepx" align="center"><?php echo (!empty($posinvoiceTemplate->store_name) ? $posinvoiceTemplate->store_name : $storeinfo->title) ?></h4>
+                    <h4 style="font-size:22px; line-height:18px;" class="linehight fontsizepx" align="center"><strong><?php echo (!empty($posinvoiceTemplate->store_name) ? $posinvoiceTemplate->store_name : $storeinfo->title) ?></strong></h4>
                 <?php }
+
                 if ($posinvoiceTemplate->company_address == 1) { ?>
-                    <p class="my-0 linehight fontsizepx"><?php echo $storeinfo->address; ?></p>
+                    <p class="my-0 linehight fontsizepx" style="margin-bottom: 8px;"><?php echo $storeinfo->address; ?></p>
                 <?php }
+
                 if ($posinvoiceTemplate->mobile_num == 1) { ?>
-                    <p class="my-0 text-center linehight fontsizepx"><strong>Mobile: <?php echo $storeinfo->phone; ?></strong></p>
+                    <p style="font-size:20px; margin-bottom: 8px;" class="my-0 text-center linehight fontsizepx"><strong>Mobile: <?php echo $storeinfo->phone; ?></strong></p>
+                <?php }
+                if ($orderinfo->cutomertype) { ?>
+                    <?php
+                    $customerType = '';
+                    switch ($orderinfo->cutomertype) {
+                        case 1:
+                            $customerType = 'Dine-in';
+                            break;
+                        case 2:
+                            $customerType = 'Online or Delivery';
+                            break;
+                        case 3:
+                            $customerType = 'My Third Party';
+                            break;
+                        case 4:
+                            $customerType = 'Takeaway';
+                            break;
+                        case 99:
+                            $customerType = 'QR Customer';
+                            break;
+                        case 100:
+                            $customerType = 'Catering Service';
+                            break;
+                        default:
+                            $customerType = 'Unknown';
+                            break;
+                    }
+                    ?>
+                    <h4 style="font-size:18px;" class="item-title linehight fontsizepx"><strong>Customer Type: <?php echo $customerType; ?></strong></h4>
                 <?php }
                 if ($posinvoiceTemplate->website == 1) { ?>
                     <p class="my-0 text-center linehight fontsizepx"><strong><?php echo (!empty($posinvoiceTemplate->websitetext) ? $posinvoiceTemplate->websitetext : 'Website:' . base_url()) ?></strong></p>
                 <?php }
                 if ($posinvoiceTemplate->mushak == 1) { ?>
-                    <p class="my-0 text-center linehight fontsizepx"><strong><?php echo (!empty($posinvoiceTemplate->mushaktext) ? $posinvoiceTemplate->mushaktext : 'Mushak-6.3') ?></strong></p>
+                    <p class="my-0 text-center linehight fontsizepx" style="font-size:22px;"><strong><?php echo (!empty($posinvoiceTemplate->mushaktext) ? $posinvoiceTemplate->mushaktext : 'Mushak-6.3') ?></strong></p>
                 <?php } ?>
             </div>
         <?php } ?>
         <div class="invoice_address linehight">
             <div class="row-data linehight">
+
+
+
+
+
+
+
+
+
 
                 <div class="item-info linehight fontsizepx">
                     <?php if ($posinvoiceTemplate->date_show == 1) { ?>
@@ -445,7 +485,7 @@
                 <?php if ($posinvoiceTemplate->bin_pos_show == 1) {
                     if ($storeinfo->isvatnumshow == 1) { ?>
                         <h5 class="item-title linehight fontsizepx"><?php echo (!empty($posinvoiceTemplate->bin_level) ? $posinvoiceTemplate->bin_level : display('tinvat')); ?>: <?php echo $storeinfo->vattinno; ?></h5>
-                <?php }
+                    <?php }
                 } ?>
             </div>
         </div>
@@ -459,6 +499,9 @@
 
                 <div class="invoice-data">
                     <?php $this->load->model('ordermanage/order_model',    'ordermodel');
+
+
+                    //                    dd($orderinfo->cutomertype);
                     $i = 0;
                     $totalamount = 0;
                     $subtotal = 0;
@@ -511,7 +554,7 @@
                         }
                         $totalamount = $totalamount + $nittotal;
                         $subtotal = $subtotal + $itemprice;
-                    ?>
+                        ?>
                         <div class="row-data linehight">
                             <div class="item-info linehight">
                                 <h5 class="item-title linehight fontsizepx"><?php echo $item->ProductName; ?></h5>
@@ -521,10 +564,10 @@
                             <div class="text-right linehight">
                                 <p class="item-number linehight fontsizepx"><?php echo numbershow($singleprice, $settinginfo->showdecimal); ?> x <?php echo quantityshow($item->menuqty, $item->is_customqty); ?></p>
                                 <h5 class="my-0 linehight fontsizepx"><?php if ($currency->position == 1) {
-                                                                            echo $currency->curr_icon;
-                                                                        } ?> <?php echo numbershow($itemprice, $settinginfo->showdecimal); ?> <?php if ($currency->position == 2) {
-                                                                                                                                                                                                        echo $currency->curr_icon;
-                                                                                                                                                                                                    } ?></h5>
+                                        echo $currency->curr_icon;
+                                    } ?> <?php echo numbershow($itemprice, $settinginfo->showdecimal); ?> <?php if ($currency->position == 2) {
+                                        echo $currency->curr_icon;
+                                    } ?></h5>
                             </div>
                         </div>
                         <?php
@@ -539,12 +582,12 @@
                                         <p class="item-number linehight fontsizepx"><?php echo numbershow($adonsinfo->price, $settinginfo->showdecimal); ?> x <?php echo $addonsqty[$y]; ?></p>
                                     </div>
                                     <h5 class="linehight fontsizepx"><?php if ($currency->position == 1) {
-                                                                            echo $currency->curr_icon;
-                                                                        } ?> <?php echo numbershow($adonsinfo->price * $addonsqty[$y], $settinginfo->showdecimal); ?> <?php if ($currency->position == 2) {
-                                                                                                                                                                                                                                echo $currency->curr_icon;
-                                                                                                                                                                                                                            } ?></h5>
+                                            echo $currency->curr_icon;
+                                        } ?> <?php echo numbershow($adonsinfo->price * $addonsqty[$y], $settinginfo->showdecimal); ?> <?php if ($currency->position == 2) {
+                                            echo $currency->curr_icon;
+                                        } ?></h5>
                                 </div>
-                            <?php $y++;
+                                <?php $y++;
                             }
                         }
 
@@ -553,20 +596,20 @@
                             foreach ($topping as $toppingid) {
                                 $tpinfo = $this->order_model->read('*', 'add_ons', array('add_on_id' => $toppingid));
                                 $alltoppingprice = $alltoppingprice + $toppingprice[$t];
-                            ?>
+                                ?>
                                 <div class="row-data">
                                     <div class="item-info">
                                         <h5 class="item-title fontsizepx">-<?php echo $tpinfo->add_on_name; ?></h5>
                                         <p class="item-number fontsizepx"><?php //echo $toppingprice[$tp];
-                                                                            ?></p>
+                                            ?></p>
                                     </div>
                                     <h5 class="linehight fontsizepx"><?php if ($currency->position == 1) {
-                                                                            echo $currency->curr_icon;
-                                                                        } ?> <?php echo numbershow($toppingprice[$t], $settinginfo->showdecimal); ?><?php if ($currency->position == 2) {
-                                                                                                                                                                                                                echo $currency->curr_icon;
-                                                                                                                                                                                                            } ?></h5>
+                                            echo $currency->curr_icon;
+                                        } ?> <?php echo numbershow($toppingprice[$t], $settinginfo->showdecimal); ?><?php if ($currency->position == 2) {
+                                            echo $currency->curr_icon;
+                                        } ?></h5>
                                 </div>
-                            <?php $t++;
+                                <?php $t++;
                             }
                         }
                     }
@@ -587,14 +630,14 @@
                                 <div class="text-right">
                                     <p class="item-number fontsizepx"><?php echo $openprice; ?> x <?php echo $openqty; ?></p>
                                     <h5 class="my-0 fontsizepx"><?php if ($currency->position == 1) {
-                                                                    echo $currency->curr_icon;
-                                                                } ?> <?php echo $openitemtotal; ?> <?php if ($currency->position == 2) {
-                                                                                                                                                                echo $currency->curr_icon;
-                                                                                                                                                            } ?></h5>
+                                            echo $currency->curr_icon;
+                                        } ?> <?php echo $openitemtotal; ?> <?php if ($currency->position == 2) {
+                                            echo $currency->curr_icon;
+                                        } ?></h5>
                                 </div>
                             </div>
 
-                    <?php }
+                        <?php }
                     }
                     $itemtotal = $totalamount + $subtotal + $opentotal;
                     $calvat = $itemtotal * 15 / 100;
@@ -639,7 +682,7 @@
             <?php if ($posinvoiceTemplate->subtotal_level_show == 1) { ?>
                 <div class="row-data linehight">
                     <div class="item-info linehight">
-                        <h5 class="item-title linehight fontsizepx"><?php echo (!empty($posinvoiceTemplate->subtotal_level) ? $posinvoiceTemplate->subtotal_level : display('subtotal')); ?></h5>
+                        <h5 class="item-title linehight fontsizepx" style="font-size:22px;"><strong><?php echo (!empty($posinvoiceTemplate->subtotal_level) ? $posinvoiceTemplate->subtotal_level : display('subtotal')); ?></strong></h5>
                     </div>
                     <h5 class="my-0 linehight fontsizepx">
                         <?php if ($currency->position == 1) {
@@ -654,7 +697,7 @@
 
 
                 <?php if ($recalculate_vat == 1){?>
-                        <div class="row-data linehight">
+                    <div class="row-data linehight">
                         <div class="item-info linehight">
                             <h5 class="item-title linehight fontsizepx"><?php echo display('subtotal_without_vat'); ?></h5>
                         </div>
@@ -668,17 +711,17 @@
                             } ?>
                         </h5>
                     </div>
-            <?php } } ?>
+                <?php } } ?>
 
             <div class="row-data linehight">
                 <div class="item-info linehight">
                     <h5 class="item-title linehight fontsizepx"><?php echo "Items Discount"; ?></h5>
                 </div>
                 <h5 class="my-0 linehight fontsizepx"><?php if ($currency->position == 1) {
-                                                            echo $currency->curr_icon;
-                                                        } ?> <?php echo numbershow($billinfo->allitemdiscount, $settinginfo->showdecimal); ?> <?php if ($currency->position == 2) {
-                                                                                                                                                                                                        echo $currency->curr_icon;
-                                                                                                                                                                                                    } ?></h5>
+                        echo $currency->curr_icon;
+                    } ?> <?php echo numbershow($billinfo->allitemdiscount, $settinginfo->showdecimal); ?> <?php if ($currency->position == 2) {
+                        echo $currency->curr_icon;
+                    } ?></h5>
             </div>
 
             <?php if ($posinvoiceTemplate->servicechargeshow == 1) { ?>
@@ -706,7 +749,7 @@
                 <div class="row-data linehight">
                     <div class="item-info linehight">
                         <h5 class="item-title linehight fontsizepx"><?php echo (!empty($posinvoiceTemplate->discount_level) ? $posinvoiceTemplate->discount_level : display('discount')); ?><?php $discountpercent = ($discount * 100) / ($billinfo->total_amount + $billinfo->service_charge + $billinfo->VAT) ?>(<?php //echo number_format($discountpercent,3)
-                                                                                                                                                                                                                                                                                                    ?>%)</h5>
+                            ?>%)</h5>
                     </div>
                     <h5 class="my-0 linehight fontsizepx">
                         <?php
@@ -746,7 +789,7 @@
                 if (empty($taxinfos)) { ?>
                     <div class="row-data linehight">
                         <div class="item-info linehight">
-                            <h5 class="item-title linehight fontsizepx"><?php echo (!empty($posinvoiceTemplate->vat_level) ? $posinvoiceTemplate->vat_level : display('vat_tax')); ?>(<?php echo $storeinfo->vat; ?>%)</h5>
+                            <h5 class="item-title linehight fontsizepx" style="font-size:15px;"><strong><?php echo (!empty($posinvoiceTemplate->vat_level) ? $posinvoiceTemplate->vat_level : display('vat_tax')); ?>(<?php echo $storeinfo->vat; ?>%)</strong></h5>
                         </div>
                         <h5 class="my-0 linehight fontsizepx">
                             <?php if ($currency->position == 1) {
@@ -758,28 +801,28 @@
                             } ?>
                         </h5>
                     </div>
-                    <?php } else {
+                <?php } else {
                     $i = 0;
                     foreach ($taxinfos as $mvat) {
                         if ($mvat['is_show'] == 1) {
                             $taxinfo = $this->order_model->read('*', 'tax_collection', array('relation_id' => $orderinfo->order_id));
                             $fieldname = 'tax' . $i;
-                    ?>
+                            ?>
                             <div class="row-data linehight">
                                 <div class="item-info linehight">
-                                    <h5 class="item-title linehight fontsizepx"><?php echo $mvat['tax_name']; ?></h5>
+                                    <h5 class="item-title linehight fontsizepx" style="font-size:15px;"><strong><?php echo $mvat['tax_name']; ?></strong></h5>
                                 </div>
-                                <h5 class="my-0 linehight fontsizepx">
+                                <h5 class="my-0 linehight fontsizepx" style="font-size:15px;">
                                     <?php if ($currency->position == 1) {
                                         echo $currency->curr_icon;
                                     } ?>
-                                    <?php echo numbershow($taxinfo->$fieldname, $settinginfo->showdecimal); ?>
+                                    <strong><?php echo numbershow($taxinfo->$fieldname, $settinginfo->showdecimal); ?></strong>
                                     <?php if ($currency->position == 2) {
                                         echo $currency->curr_icon;
                                     } ?>
                                 </h5>
                             </div>
-            <?php $i++;
+                            <?php $i++;
                         }
                     }
                 }
@@ -831,12 +874,12 @@
                         </h5>
                     </div>
                 <?php } ?>
-                <?php } else {
+            <?php } else {
                 if ($posinvoiceTemplate->total_due_show == 1) {
-                ?>
+                    ?>
                     <div class="row-data linehight">
                         <div class="item-info linehight">
-                            <h5 class="item-title linehight fontsizepx"><?php echo (!empty($posinvoiceTemplate->total_due) ? $posinvoiceTemplate->total_due : display('total_due')); ?></h5>
+                            <h5 class="item-title linehight fontsizepx" style="font-size:22px;"><strong><?php echo (!empty($posinvoiceTemplate->total_due) ? $posinvoiceTemplate->total_due : display('total_due')); ?></strong></h5>
                         </div>
                         <h5 class="my-0 linehight fontsizepx">
                             <?php if ($currency->position == 1) {
@@ -848,7 +891,7 @@
                             } ?>
                         </h5>
                     </div>
-            <?php }
+                <?php }
             } ?>
             <?php $paymentsmethod = $this->order_model->allpayments($orderinfo->order_id);
             $alltype = "";
@@ -867,18 +910,18 @@
                     <div class="row-data linehight">
                         <div class="item-info linehight">
                             <h5 class="item-title linehight fontsizepx"><?php
-                                                                        if ($orderinfo->is_duepayment == 1) {
-                                                                            echo "Due";
-                                                                        } else {
-                                                                            echo $pmethod->payment_method . "(" . $allcard . ")";
-                                                                        }
-                                                                        ?></h5>
+                                if ($orderinfo->is_duepayment == 1) {
+                                    echo "Due";
+                                } else {
+                                    echo $pmethod->payment_method . "(" . $allcard . ")";
+                                }
+                                ?></h5>
                         </div>
                         <h5 class="my-0 linehight fontsizepx"><?php if ($currency->position == 1) {
-                                                                    echo $currency->curr_icon;
-                                                                } ?> <?php echo numbershow($pmethod->paidamount, $settinginfo->showdecimal); ?> <?php if ($currency->position == 2) {
-                                                                                                                                                                                                            echo $currency->curr_icon;
-                                                                                                                                                                                                        } ?></h5>
+                                echo $currency->curr_icon;
+                            } ?> <?php echo numbershow($pmethod->paidamount, $settinginfo->showdecimal); ?> <?php if ($currency->position == 2) {
+                                echo $currency->curr_icon;
+                            } ?></h5>
                     </div>
                 <?php } else if ($pmethod->payment_method_id == 14) {
                     $allmobilep = $this->order_model->allmpayments($pmethod->bill_id, $pmethod->payment_method_id);
@@ -890,88 +933,88 @@
                     <div class="row-data linehight">
                         <div class="item-info linehight">
                             <h5 class="item-title linehight fontsizepx"><?php
-                                                                        if ($orderinfo->is_duepayment == 1) {
-                                                                            echo "Due";
-                                                                        } else {
-                                                                            echo $pmethod->payment_method . "(" . $allmobile . ")";
-                                                                        }
-                                                                        ?></h5>
+                                if ($orderinfo->is_duepayment == 1) {
+                                    echo "Due";
+                                } else {
+                                    echo $pmethod->payment_method . "(" . $allmobile . ")";
+                                }
+                                ?></h5>
                         </div>
                         <h5 class="my-0 linehight fontsizepx"><?php if ($currency->position == 1) {
-                                                                    echo $currency->curr_icon;
-                                                                } ?> <?php echo numbershow($pmethod->paidamount, $settinginfo->showdecimal); ?> <?php if ($currency->position == 2) {
-                                                                                                                                                                                                            echo $currency->curr_icon;
-                                                                                                                                                                                                        } ?></h5>
+                                echo $currency->curr_icon;
+                            } ?> <?php echo numbershow($pmethod->paidamount, $settinginfo->showdecimal); ?> <?php if ($currency->position == 2) {
+                                echo $currency->curr_icon;
+                            } ?></h5>
                     </div>
                 <?php } else {
                     $alltype .= $pmethod->payment_method . ",";
-                ?>
+                    ?>
                     <div class="row-data linehight">
                         <div class="item-info linehight">
                             <h5 class="item-title linehight fontsizepx"><?php
-                                                                        if ($orderinfo->is_duepayment == 1) {
-                                                                            echo "Due";
-                                                                        } else {
-                                                                            echo $pmethod->payment_method;
-                                                                        }
-                                                                        ?></h5>
+                                if ($orderinfo->is_duepayment == 1) {
+                                    echo "Due";
+                                } else {
+                                    echo $pmethod->payment_method;
+                                }
+                                ?></h5>
                         </div>
                         <h5 class="my-0 linehight fontsizepx"><?php if ($currency->position == 1) {
-                                                                    echo $currency->curr_icon;
-                                                                } ?> <?php echo numbershow($pmethod->paidamount, $settinginfo->showdecimal); ?> <?php if ($currency->position == 2) {
-                                                                                                                                                                                                            echo $currency->curr_icon;
-                                                                                                                                                                                                        } ?></h5>
+                                echo $currency->curr_icon;
+                            } ?> <?php echo numbershow($pmethod->paidamount, $settinginfo->showdecimal); ?> <?php if ($currency->position == 2) {
+                                echo $currency->curr_icon;
+                            } ?></h5>
                     </div>
-            <?php }
+                <?php }
                 $totalpaid = $pmethod->paidamount + $totalpaid;
             }
             $alltype = trim($alltype, ',');
             ?>
             <?php if ($posinvoiceTemplate->change_due_show == 1) {
                 if ($orderinfo->is_duepayment != 1) {
-            ?>
+                    ?>
                     <div class="row-data linehight">
                         <div class="item-info linehight">
                             <h5 class="item-title linehight fontsizepx"><?php echo (!empty($posinvoiceTemplate->change_due_level) ? $posinvoiceTemplate->change_due_level : display('change_due')); ?></h5>
                         </div>
                         <h5 class="my-0 linehight fontsizepx"><?php if ($currency->position == 1) {
-                                                                    echo $currency->curr_icon;
-                                                                } ?> <?php if ($customepaid > $billinfo->bill_amount) {
-                                                                                                                                    echo numbershow($customepaid - $billinfo->bill_amount, $settinginfo->showdecimal);
-                                                                                                                                } else {
-                                                                                                                                    echo "0.00";
-                                                                                                                                } ?> <?php if ($currency->position == 2) {
-                                                                                                                                                                                                                                                                                    echo $currency->curr_icon;
-                                                                                                                                                                                                                                                                                } ?></h5>
+                                echo $currency->curr_icon;
+                            } ?> <?php if ($customepaid > $billinfo->bill_amount) {
+                                echo numbershow($customepaid - $billinfo->bill_amount, $settinginfo->showdecimal);
+                            } else {
+                                echo "0.00";
+                            } ?> <?php if ($currency->position == 2) {
+                                echo $currency->curr_icon;
+                            } ?></h5>
                     </div>
                 <?php }
             }
             if ($billinfo->bill_status == 1) {
                 if ($orderinfo->is_duepayment != 1) {
-                ?>
+                    ?>
                     <div class="row-data linehight">
                         <div class="item-info linehight">
                             <h5 class="item-title linehight fontsizepx"><?php echo display('totalpayment') ?></h5>
                         </div>
                         <h5 class="my-0 linehight fontsizepx"> <?php if ($billinfo->bill_status == 1) {
-                                                                    if ($currency->position == 1) {
-                                                                        echo $currency->curr_icon;
-                                                                    }
-                                                                    echo numbershow($totalpaid, $settinginfo->showdecimal);
-                                                                    if ($currency->position == 2) {
-                                                                        echo $currency->curr_icon;
-                                                                    }
-                                                                } else {
-                                                                    if ($currency->position == 1) {
-                                                                        echo $currency->curr_icon;
-                                                                    }
-                                                                    echo numbershow($customepaid, $settinginfo->showdecimal);
-                                                                    if ($currency->position == 2) {
-                                                                        echo $currency->curr_icon;
-                                                                    }
-                                                                } ?></h5>
+                                if ($currency->position == 1) {
+                                    echo $currency->curr_icon;
+                                }
+                                echo numbershow($totalpaid, $settinginfo->showdecimal);
+                                if ($currency->position == 2) {
+                                    echo $currency->curr_icon;
+                                }
+                            } else {
+                                if ($currency->position == 1) {
+                                    echo $currency->curr_icon;
+                                }
+                                echo numbershow($customepaid, $settinginfo->showdecimal);
+                                if ($currency->position == 2) {
+                                    echo $currency->curr_icon;
+                                }
+                            } ?></h5>
                     </div>
-            <?php }
+                <?php }
             }
             ?>
 
@@ -979,7 +1022,7 @@
 
         <div class="invoice_address linehight">
             <?php if ($posinvoiceTemplate->billing_to_show == 1 || $posinvoiceTemplate->bill_by_show == 1) { ?>
-                <div class="row-data linehight">
+                <div class="row-data linehight" style="margin-bottom:8px;">
                     <?php if ($posinvoiceTemplate->billing_to_show == 1) { ?>
                         <div class="item-info linehight ">
                             <h5 class="item-title linehight fontsizepx"><?php echo (!empty($posinvoiceTemplate->billing_to) ? $posinvoiceTemplate->billing_to : display('billing_to')); ?>: <?php echo $customerinfo->customer_name; ?></h5>
@@ -990,36 +1033,28 @@
                 </div>
             <?php }
             if ($posinvoiceTemplate->table_level_show == 1 || $posinvoiceTemplate->order_no_show == 1) { ?>
-                <div class="middle-data linehight">
+                <div class="middle-data linehight" style="margin-bottom:8px;">
                     <?php if ($posinvoiceTemplate->table_level_show == 1) { ?>
                         <div class="item-info gap_right linehight">
                             <?php if ($orderinfo->cutomertype == 3) {
                                 $thirdpartyinfo = $this->db->select('*')->where('companyId', $orderinfo->isthirdparty)->get('tbl_thirdparty_customer')->row();
-                            ?>
-                                <h5 class="item-title linehight fontsizepx">Third Party(<?php echo $thirdpartyinfo->company_name; ?>)</h5>
+                                ?>
+                                <h5 class="item-title linehight fontsizepx" style="font-size:22px;"><strong>Third Party(<?php echo $thirdpartyinfo->company_name; ?>)</strong></h5>
                             <?php } else { ?>
-                                <h5 class="item-title linehight fontsizepx"><?php echo (!empty($posinvoiceTemplate->table_level) ? $posinvoiceTemplate->table_level : display('table')); ?>: <?php echo $tableinfo->tablename; ?></h5>
+                                <h5 class="item-title linehight fontsizepx" style="font-size:22px;"><strong><?php echo (!empty($posinvoiceTemplate->table_level) ? $posinvoiceTemplate->table_level : display('table')); ?>: <?php echo $tableinfo->tablename; ?></strong></h5>
                             <?php } ?>
                         </div>
                     <?php }
                     if ($posinvoiceTemplate->order_no_show == 1) { ?>
                         <div class="item-info linehight">
-                            <h5 class="item-title linehight fontsizepx"><?php echo (!empty($posinvoiceTemplate->order_no) ? $posinvoiceTemplate->order_no : display('orderno')); ?>:
-
-                            <?php if($gloinvsetting->order_number_format){?>
-                                <?php echo $orderinfo->random_order_number;?>
-                            <?php }else{?>
-                                <?php echo getPrefixSetting()->sales . '-' . $orderinfo->order_id; ?>
-                            <?php }?>
-
-                        </h5>
+                            <h5 class="item-title linehight fontsizepx" style="font-size:22px;"><strong><?php echo (!empty($posinvoiceTemplate->order_no) ? $posinvoiceTemplate->order_no : display('orderno')); ?>: <?php echo getPrefixSetting()->sales . '-' . $orderinfo->order_id; ?></strong></h5>
                         </div>
                     <?php } ?>
                 </div>
             <?php }
             if ($posinvoiceTemplate->payment_status_show == 1) {
-            ?>
-                <div class="middle-data linehight">
+                ?>
+                <div class="middle-data linehight"style="margin-bottom:8px;">
                     <div class="text-center linehight">
                         <h5 class="item-title linehight fontsizepx" style="font-size:18px; font-weight:bold;"><?php echo (!empty($posinvoiceTemplate->payment_status) ? $posinvoiceTemplate->payment_status : display('payment_status')); ?>:
                             <?php
@@ -1042,47 +1077,47 @@
                 </div>
             <?php } ?>
             <?php if ($posinvoiceTemplate->waitershow == 1) { ?>
-                <div class="middle-data linehight">
+                <div class="middle-data linehight" style="margin-bottom:8px;">
                     <div class="text-center linehight">
                         <h5 class="item-title linehight fontsizepx" style="font-size:18px; font-weight:bold;">
-                            <?php echo (!empty($posinvoiceTemplate->waiter) ? $posinvoiceTemplate->waiter : 'Waiter:' . @$waiter->firstname . ' ' . @$waiter->lastname); ?>
+                            <strong><?php echo ('Waiter:' . @$waiter->firstname . ' ' . @$waiter->lastname); ?></strong>
                         </h5>
                     </div>
                 </div>
             <?php }
             if ($posinvoiceTemplate->footertextshow == '1') { ?>
-                <div class="text-center linehight">
-                    <?php //if($gloinvsetting->invthank==1){
-                    ?>
-                    <h3 class="my-0 linehight fontsizepx"><?php echo (!empty($posinvoiceTemplate->footer_text) ? $posinvoiceTemplate->footer_text : display('thanks_you')); ?></h3>
+            <div class="text-center linehight">
+                <?php //if($gloinvsetting->invthank==1){
+                ?>
+                <h3 class="my-0 linehight fontsizepx"><?php echo (!empty($posinvoiceTemplate->footer_text) ? $posinvoiceTemplate->footer_text : display('thanks_you')); ?></h3>
                 <?php }
-            if ($gloinvsetting->invpower == 1) { ?>
+                if ($gloinvsetting->invpower == 1) { ?>
                     <p class="b_top linehight fontsizepx"><!--Powered  By: RESTORAPOS, www.restorapos.com--><?php echo display('powerbybdtask') ?></p>
                 <?php } ?>
-                </div>
-                <?php //}
-                if ($gloinvsetting->qroninvoice == 1) {
+            </div>
+            <?php //}
+            if ($gloinvsetting->qroninvoice == 1) {
                 ?>
-                    <div class="text-center linehight fontsizepx">
-                        <?php $qr = Zatca($orderinfo->order_id); ?>
-                        <img src="<?php echo $qr; ?>" alt="QR Code" />
-                    </div>
-                <?php } ?>
+                <div class="text-center linehight fontsizepx">
+                    <?php $qr = Zatca($orderinfo->order_id); ?>
+                    <img src="<?php echo $qr; ?>" alt="QR Code" />
+                </div>
+            <?php } ?>
         </div>
         <?php if ($posinvoiceTemplate->customer_address == 1) { ?>
             <div class="invoice_address linehight">
-            	 <div class="linehight" style="border-bottom: 2.5px dashed #747272;margin-bottom: 3px;">
-                 <h4 class="my-0 linehight fontsizepx" style="margin-bottom: 3px;">Customer Information</h4>
-                 </div>
-            	<?php if($posinvoiceTemplate->customer_address==1){ ?>
-
-                <div class="linehight">
-                    <p class="my-0 linehight fontsizepx"><span style="font-weight: 600;"><?php echo display('name');?>:</span> <?php echo $main_customerinfo->customer_name?></p>
+                <div class="linehight" style="border-bottom: 2.5px dashed #747272;margin-bottom: 3px;">
+                    <h4 class="my-0 linehight fontsizepx" style="margin-bottom: 3px;">Customer Information</h4>
                 </div>
+                <?php if($posinvoiceTemplate->customer_address==1){ ?>
+
+                    <div class="linehight">
+                        <p class="my-0 linehight fontsizepx"><span style="font-weight: 600;"><?php echo display('name');?>:</span> <?php echo $main_customerinfo->customer_name?></p>
+                    </div>
                 <?php } if($posinvoiceTemplate->customer_mobile==1){?>
-                	<div class="linehight">
+                    <div class="linehight">
                         <p class="my-0 linehight fontsizepx"><span style="font-weight: 600;"><?php echo display('phone');?>:</span> <?php echo $main_customerinfo->customer_phone; ?></p>
-                	</div>
+                    </div>
                 <?php } ?>
 
                 <?php if($posinvoiceTemplate->customer_address==1){ ?>
