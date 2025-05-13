@@ -1,0 +1,151 @@
+.bookinfo{margin-bottom:0 !important;}
+.modal-dialog {
+    max-width: 560px !important;
+}
+.calculate-content .btn {
+   color:#FFF !important;
+}
+.serach{cursor:pointer;}
+.snackbar {
+    visibility: hidden;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: relative;
+    z-index: 9999;
+    bottom: 30px;
+    font-size: 17px;
+	display:none;
+	transition: all 300ms linear 0s;
+}
+
+.show {
+	display:block;
+    visibility: visible !important;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+	
+}
+.ui-front {
+    z-index: 9999 !important;
+}
+
+.shipping-form h2, .coupon-form h2{
+	margin-bottom: 15px;
+}
+
+.cart-totals .cart-totals-border{
+	border: 0;
+}
+/*table css*/
+.restora-table {
+  width: 160px;
+  height: 160px;
+  padding: 10px;
+  border-radius: 16px;
+  color: #333;
+  border: 1px solid #ddd;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  margin: 20px;
+}
+.table-round {
+  border-radius: 50%;
+}
+
+.table-rotate {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.table-rotate .table-inner {
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.table-lg {
+  width: 220px;
+}
+
+.table-xl {
+  width: 280px;
+}
+
+.table-number {
+  margin-bottom: 5px;
+}
+
+.table-user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.table-user svg {
+  margin-right: 3px;
+}
+
+@media(min-width: 768px) and (max-width: 991px) {
+  .restora-table {
+    width: 120px;
+    height: 120px;
+    margin: 10px;
+    font-size: 11px;
+  }
+
+  .table-lg {
+    width: 150px;
+  }
+
+  .table-xl {
+    width: 230px;
+  }
+
+}
+
+@media(min-width: 922px) and (max-width: 1199px) {
+  .restora-table {
+    width: 160px;
+    height: 160px;
+    margin: 15px;
+    font-size: 13px;
+  }
+
+  .table-lg {
+    width: 200px;
+  }
+
+  .table-xl {
+    width: 270px;
+  }
+
+}
+
+@media(max-width: 991px){
+	.shipping-form,
+	.coupon-form{
+		margin-bottom: 30px	
+	}
+}

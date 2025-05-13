@@ -1,0 +1,32 @@
+.cmt-5{
+    margin-top:5px;
+}
+
+.cmr-8{
+    margin-right: 8%;
+}
+
+.cm-0{
+    margin:0;
+}
+
+.thead-bg{
+    background: #eeeeee;
+    color: #374767;
+}
+
+.th-width{
+    width:10%;
+}
+
+.chckbx-style{
+    background:#eee;
+    width:10%;
+    float:right;
+    margin-right: 5%;
+    margin-left: -16%; 
+}
+
+.msg{
+    background: #019868; color: #fff; padding: 10px 10px 10px 10px;
+}

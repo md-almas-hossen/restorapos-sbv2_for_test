@@ -1,0 +1,205 @@
+.option_select {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.option_select .heading {
+    font-size: 16px;
+    text-transform: capitalize;
+    font-weight: 600;
+    margin: 0;
+    color: #232323;
+    background: #d5ffd1;
+    width: 100%;
+    background-image: linear-gradient(90deg,
+			hsl(139deg 100% 85%) 0%,
+			hsl(139deg 100% 87%) 11%,
+			hsl(138deg 100% 88%) 22%,
+			hsl(138deg 100% 90%) 33%,
+			hsl(137deg 100% 92%) 44%,
+			hsl(137deg 100% 94%) 56%,
+			hsl(137deg 100% 95%) 67%,
+			hsl(136deg 100% 97%) 78%,
+			hsl(136deg 100% 98%) 89%,
+			hsl(0deg 0% 100%) 100%);
+    background-image: linear-gradient(90deg,
+			hsl(0deg 0% 87%) 0%,
+			hsl(344deg 0% 88%) 11%,
+			hsl(344deg 0% 90%) 22%,
+			hsl(344deg 0% 91%) 33%,
+			hsl(344deg 0% 93%) 44%,
+			hsl(344deg 0% 94%) 56%,
+			hsl(344deg 0% 96%) 67%,
+			hsl(344deg 0% 97%) 78%,
+			hsl(344deg 0% 99%) 89%,
+			hsl(0deg 0% 100%) 100%);
+    padding: 8px 15px;
+    margin-bottom: 12px;
+}
+
+.p-25{
+	padding: 25px;
+}
+.checkbox .check-label.checkbox-disable{color:#CCC;}
+.checkbox .checkbox-disable .indicator:before{
+	border:#CCC 2px solid;
+	}
+.topping-section .radio label::before, .topping-section .checkbox label::before{
+	display:none;
+	}
+.topping-section .checkbox input,
+.radio input {
+	opacity: 0;
+	position: absolute;
+}
+
+.topping-section .checkbox label{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 0;
+    font-size: 15px;
+    line-height: 25px;
+    color: #232323;
+    width: 100%;
+    letter-spacing: 0.2px;
+}
+
+.topping-section .radio label {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 0;
+    font-size: 15px;
+    line-height: 25px;
+    color: #232323;
+    width: 100%;
+    letter-spacing: 0.2px;
+	display: initial;
+}
+.checkbox .indicator,
+.radio .indicator {
+	position: relative;
+}
+
+.checkbox .indicator:before,
+.radio .indicator:before {
+	content: '';
+	border: 2px solid #888;
+	display: inline-block;
+	vertical-align: middle;
+	width: 18px;
+	height: 18px;
+	padding: 1px;
+	margin-top: -2px;
+	margin-right: 6px;
+	text-align: center;
+}
+
+.checkbox input:checked + .indicator:before {
+    border-color: #00a800;
+    background-color: #00a800;
+}
+
+.checkbox input:checked + .indicator:after {
+    content: "\e64c";
+    font-family: 'themify';
+    font-size: 10px;
+    color: #fff;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    text-align: center;
+    top: 2px;
+    left: 0;
+    bottom: 0;
+    margin-top: -3px;
+}
+
+.radio input + .indicator:before {
+	border-radius: 50%;
+}
+
+.radio input:checked + .indicator:before {
+	border-color: #000;
+	background: #000;
+	box-shadow: inset 0px 0px 0px 4px #fff;
+}
+
+.radio input:disabled + .indicator:before {
+	border-color: #ccc;
+	box-shadow: inset 0px 0px 0px 5px #fff;
+}
+
+.radio input:checked:disabled + .indicator:before {
+	border-color: #ccc;
+	background: #ccc;
+	box-shadow: inset 0px 0px 0px 5px #fff;
+}
+
+.checkbox input:focus + .indicator,
+.radio input:focus + .indicator {
+	outline: 0px solid #ddd;
+}
+
+.option_box .radio,
+.option_box .checkbox {
+	position: relative;
+	display: block;
+	margin-bottom: 12px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #ddd;
+}
+
+.option_box .checkbox .unit_price, 
+.option_box .radio .unit_price {
+    float: right;
+    font-size: 15px;
+    color: #303030;
+}
+
+.btn_push-group {
+	border-radius: 4px;
+	display: none;
+	margin-top: 6px;
+	margin-bottom: 8px;
+}
+
+.btn_push-group.active {
+	display: inline-block;
+	overflow: hidden;
+}
+
+.btn_push {
+    padding: 10px 20px;
+    text-transform: capitalize;
+    background: #7e7e7e;
+    color: #ffffff;
+    font-weight: 500;
+    border-radius: 5px !important;
+    margin: 4px 8px;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+}
+
+.btn_push i {
+	font-size: 24px;
+	margin-right: 7px;
+}
+
+.btn_push:hover,
+.btn_push:active:focus,
+.btn_push.active,
+.btn_push:focus {
+	outline: none !important;
+	box-shadow: none;
+	background: #00a800;
+	color: #fff;
+}

@@ -1,0 +1,258 @@
+body {
+}
+
+.phrase-edit-list {
+  width: 6%;
+}
+.phrase-edit-phrase {
+  width: 30%;
+}
+.phrase-edit-label {
+  width: 40%;
+}
+
+.sms-form .panel-body p {
+  background: lightyellow;
+  padding: 1em;
+  box-shadow: 1px 3px 5px #0004;
+  border-radius: 5px;
+  cursor: alias;
+}
+
+.sms-template-warning p {
+  border-radius: 5px;
+  background: lightyellow;
+  padding: 1em;
+  text-transform: capitalize;
+  box-shadow: 1px 3px 5px #0004;
+}
+.dark-mode .sms-template-warning p {
+  background: var(--dark-secondary);
+}
+
+.bank-ledger {
+  margin-left: 2px;
+}
+.bank-ledger .table-responsive {
+  margin-top: 10px;
+}
+.customer-list .modal-header {
+  background-color: green;
+  color: white;
+}
+.customer-list .modal-body .container {
+  margin-top: 50px;
+}
+
+.reset-system-alert p {
+  color: #8a4246;
+  background-color: #ffedb6;
+  border: 2px dotted #ffd479;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+.reset-system-b {
+  padding-right: 0;
+}
+
+.serversetting-local-url {
+  background: #f4f4f4;
+  padding-top: 15px;
+  margin-right: 2%;
+}
+.serversetting-local-url img {
+  width: 100%;
+}
+.serversetting-waiter-app {
+  background: #f4f4f4;
+  padding-top: 15px;
+  margin-right: 2%;
+}
+.serversetting-waiter-app img {
+  width: 100%;
+}
+.serversetting-cusotomer-app {
+  padding-top: 0px;
+}
+.serversetting-cusotomer-app .app-playstore {
+  font-size: 16px;
+  padding-bottom: 20px;
+  font-weight: 600;
+}
+
+.table-updt-files {
+  position: relative;
+}
+.table-updt-files .input-file {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  filter: alpha(opacity=0);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  opacity: 0;
+  background-color: transparent;
+  color: transparent;
+}
+.tablelist-img {
+  height: 60px;
+  width: 60px;
+}
+
+/*//new style*/
+.restora-table {
+  width: 60px;
+  height: 60px;
+  padding: 10px;
+  border-radius: 16px;
+  color: #333;
+  border: 1px solid #ddd;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  margin: 20px;
+}
+.table-round {
+  border-radius: 50%;
+}
+
+.table-rotate {
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.table-rotate .table-inner {
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.table-lg {
+  width: 140px;
+}
+
+.table-xl {
+  width: 180px;
+}
+
+.table-number {
+  margin-bottom: 5px;
+}
+
+.table-user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.table-user svg {
+  margin-right: 3px;
+}
+.bankcard {
+  max-width: 1000px;
+  display: flex;
+  float: right;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.bankcard .switch-toggle {
+  height: 40px;
+}
+
+.bankcard .switch-toggle input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  z-index: -2;
+}
+
+.bankcard .switch-toggle input[type="checkbox"] + label {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 40px;
+  border-radius: 20px;
+  margin: 0;
+  cursor: pointer;
+  box-shadow: inset -8px -8px 15px rgba(255, 255, 255, 0.6),
+    inset 10px 10px 10px rgba(0, 0, 0, 0.25);
+}
+
+.bankcard .switch-toggle input[type="checkbox"] + label::before {
+  position: absolute;
+  content: "OFF";
+  font-size: 13px;
+  text-align: center;
+  line-height: 25px;
+  top: 8px;
+  left: 8px;
+  width: 45px;
+  height: 25px;
+  border-radius: 20px;
+  background-color: #d1dad3;
+  box-shadow: -3px -3px 5px rgba(255, 255, 255, 0.5),
+    3px 3px 5px rgba(0, 0, 0, 0.25);
+  transition: 0.3s ease-in-out;
+}
+
+.bankcard .switch-toggle input[type="checkbox"]:checked + label::before {
+  left: 50%;
+  content: "ON";
+  color: #fff;
+  background-color: #00b33c;
+  box-shadow: -3px -3px 5px rgba(255, 255, 255, 0.5), 3px 3px 5px #00b33c;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .restora-table {
+    width: 60px;
+    height: 60px;
+    margin: 10px;
+    font-size: 11px;
+  }
+
+  .table-lg {
+    width: 180px;
+  }
+
+  .table-xl {
+    width: 270px;
+  }
+}
+
+@media (min-width: 922px) and (max-width: 1199px) {
+  .restora-table {
+    width: 100px;
+    height: 100px;
+    margin: 15px;
+    font-size: 13px;
+  }
+
+  .table-lg {
+    width: 200px;
+  }
+
+  .table-xl {
+    width: 300px;
+  }
+}

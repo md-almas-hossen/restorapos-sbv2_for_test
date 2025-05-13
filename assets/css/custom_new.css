@@ -1,0 +1,336 @@
+.user-panel .info .email-link {
+  margin-bottom: 5px;
+  font-size: 13px;
+  color: #9da9bb;
+}
+
+/* panel */
+
+.panel {
+  /* border: 0; */
+  /* border-radius: 16px; */
+  /* box-shadow: 0px 1px 4px 0px #14034212; */
+}
+
+.panel-bd > .panel-heading {
+  /* border: 0; */
+  /* border-top-left-radius: 1rem; */
+  /* border-top-right-radius: 1rem; */
+}
+
+.panel-bd .panel-heading::before {
+  display: none;
+}
+
+@media (min-width: 1400px) {
+  .card-content .row > * {
+    width: 20%;
+  }
+}
+
+@media (max-width: 475px) {
+  .card-content .row > * {
+    width: 100%;
+  }
+}
+
+.info-box {
+  padding: 15px;
+  background-color: #fff;
+  box-shadow: 0px 1px 4px 0px #14034212;
+  margin-bottom: 20px;
+  /* border-radius: 16px; */
+}
+
+.info-box .info-box-icon {
+  font-size: 32px;
+  width: 50px;
+}
+
+.info-box .info-box-content {
+  /* line-height: 1.8; */
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-left: 15px;
+}
+
+.info-box .info-box-number {
+  font-size: 30px;
+  line-height: 42px;
+}
+
+.info-box .progress {
+  height: 3px;
+  margin: 5px 0;
+  box-shadow: none;
+  background-color: rgba(0, 0, 0, 0.125);
+}
+
+.info-box .progress .progress-bar {
+  box-shadow: none;
+  background-color: #00a0ff;
+}
+
+.gradient-one {
+  background: #43cea2;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #185a9d, #43cea2);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #185a9d, #43cea2);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.gradient-two {
+  background: #9d50bb;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #6e48aa, #9d50bb);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #6e48aa, #9d50bb);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.gradient-three {
+  background: #add100;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #7b920a, #add100);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #7b920a, #add100);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.gradient-four {
+  background: #00d2ff;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #3a7bd5, #00d2ff);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #3a7bd5, #00d2ff);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.gradient-five {
+  background: #fc354c;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0abfbc, #fc354c);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #0abfbc, #fc354c);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.gradient-six {
+  background: #c04848;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #480048, #c04848);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #480048, #c04848);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.gradient-seven {
+  background: #7474bf;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #348ac7, #7474bf);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #348ac7, #7474bf);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.gradient-eight {
+  background: #3d7eaa;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #ffe47a, #3d7eaa);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #ffe47a, #3d7eaa);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.gradient-nine {
+  background: #4776e6;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #8e54e9, #4776e6);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #8e54e9, #4776e6);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.gradient-ten {
+  background: #ff8008;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #ffc837, #ff8008);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #ffc837, #ff8008);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.gradient-eleven {
+  background: #4cb8c4;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #3cd3ad, #4cb8c4);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #3cd3ad, #4cb8c4);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.gradient-twelve {
+  background: #1d2b64;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #f8cdda, #1d2b64);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #f8cdda, #1d2b64);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.gradient-thirteen {
+  background: #ff512f;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #dd2476, #ff512f);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #dd2476, #ff512f);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.gradient-fourteen {
+  background: #348f50;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #56b4d3, #348f50);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #56b4d3, #348f50);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.gradient-fifteen {
+  background: #16a085;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #f4d03f, #16a085);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #f4d03f, #16a085);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.gradient-sixteen {
+  background: #314755;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #26a0da, #314755);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #26a0da, #314755);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.position-b,
+.position-bc,
+.position-bl,
+.position-br,
+.position-center,
+.position-l,
+.position-lc,
+.position-r,
+.position-rc,
+.position-t,
+.position-tc,
+.position-tl,
+.position-tr {
+  position: absolute !important;
+  display: block;
+}
+
+.position-br {
+  right: 0;
+  top: 0;
+}
+
+.mr-n5,
+.mx-n5 {
+  margin-right: -2rem !important;
+}
+
+.mb-n5,
+.my-n5 {
+  margin-top: -2rem !important;
+}
+
+.d-flex {
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+.flex-wrap {
+  flex-wrap: wrap !important;
+}
+
+.rounded {
+  border-radius: 0.25rem !important;
+}
+
+.flex-fill {
+  -ms-flex: 1 1 auto !important;
+  flex: 1 1 auto !important;
+}
+
+.w-100 {
+  width: 100% !important;
+}
+
+.align-self-center {
+  -ms-flex-item-align: center !important;
+  align-self: center !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.flex-column {
+  -ms-flex-direction: column !important;
+  flex-direction: column !important;
+}
+
+.justify-content-center {
+  -ms-flex-pack: center !important;
+  justify-content: center !important;
+}
+
+.justify-content-between {
+  justify-content: space-between !important;
+}
+
+.fw-medium {
+  font-weight: 500 !important;
+}
+
+.fw-bold {
+  font-weight: 700 !important;
+}
+
+.fw-black {
+  font-weight: 900 !important;
+}
+
+.mb-2 {
+  margin-bottom: 8px !important;
+}
+
+/* Table */
+.table thead th {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  background-color: #37a0002e;
+}
+
+.panel-red .table thead th {
+  background-color: #e5343d2b;
+}
+
+.table tr th:first-child,
+.table tr td:first-child {
+  padding-left: 20px;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #37a0000d;
+}
+
+.panel-red .table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #e5343d0d;
+}

@@ -1,0 +1,122 @@
+.border-dash{
+	border-bottom: 1px dashed #e2e2e2!important;
+	}
+
+
+
+.map, .map iframe, .map img{
+    width: 100%;
+    height: 400px;
+}
+.submenuactive{
+	color:#00973e !important;
+	}
+.pcoursor{cursor:pointer}
+
+/*table css*/
+.restora-table {
+  width: 160px;
+  height: 160px;
+  padding: 10px;
+  border-radius: 16px;
+  color: #333;
+  border: 1px solid #ddd;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  margin: 20px;
+}
+.table-round {
+  border-radius: 50%;
+}
+
+.table-rotate {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.table-rotate .table-inner {
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.table-lg {
+  width: 220px;
+}
+
+.table-xl {
+  width: 280px;
+}
+
+.table-number {
+  margin-bottom: 5px;
+}
+
+.table-user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.table-user svg {
+  margin-right: 3px;
+}
+
+@media(min-width: 768px) and (max-width: 991px) {
+  .restora-table {
+    width: 120px;
+    height: 120px;
+    margin: 10px;
+    font-size: 11px;
+  }
+
+  .table-lg {
+    width: 150px;
+  }
+
+  .table-xl {
+    width: 230px;
+  }
+
+}
+
+@media(min-width: 922px) and (max-width: 1199px) {
+  .restora-table {
+    width: 160px;
+    height: 160px;
+    margin: 15px;
+    font-size: 13px;
+  }
+
+  .table-lg {
+    width: 200px;
+  }
+
+  .table-xl {
+    width: 270px;
+  }
+
+}
+@media (min-width: 1650px) {
+	.d-dxl-flex{
+		display: flex!important;
+	}		
+}

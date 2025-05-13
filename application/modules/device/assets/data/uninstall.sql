@@ -1,0 +1,21 @@
+DELETE FROM sec_menu_item WHERE sec_menu_item.module = 'device';
+DELETE FROM `language` WHERE `language`.`phrase` = 'device';
+DELETE FROM `language` WHERE `language`.`phrase` = 'device_name';
+DELETE FROM `language` WHERE `language`.`phrase` = 'device_ip';
+DELETE FROM `language` WHERE `language`.`phrase` = 'assigned_employee_no';
+DELETE FROM `language` WHERE `language`.`phrase` = 'assign';
+DELETE FROM `language` WHERE `language`.`phrase` = 'delete_device';
+DELETE FROM `language` WHERE `language`.`phrase` = 'device_ip_form';
+DELETE FROM `language` WHERE `language`.`phrase` = 'add_new_device_ip';
+DELETE FROM `language` WHERE `language`.`phrase` = 'employees_under_device';
+DELETE FROM `language` WHERE `language`.`phrase` = 'no_employee_remains';
+DELETE FROM `language` WHERE `language`.`phrase` = 'no_employee_remains';
+DELETE FROM `language` WHERE `language`.`phrase` = 'attendance_data_message';
+DELETE FROM `language` WHERE `language`.`phrase` = 'get_zkt_attendance_data';
+DELETE FROM `language` WHERE `language`.`phrase` = 'port';
+DELETE FROM `language` WHERE `language`.`phrase` = 'set_your_device';
+DELETE FROM `language` WHERE `language`.`phrase` = 'machine_id';
+DELETE FROM `language` WHERE `language`.`phrase` = 'wastage';
+DELETE FROM `language` WHERE `language`.`phrase` = 'actual_stay';
+
+ALTER TABLE `employee_history` DROP `device_ip_id`;

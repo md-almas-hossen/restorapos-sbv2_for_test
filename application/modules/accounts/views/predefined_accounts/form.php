@@ -1,0 +1,94 @@
+<div class="row">
+    <div style="margin-bottom: 10px" class="col-sm-12 col-md-12">
+        <div class="btn-group pull-right form-inline">
+            <?php if ($this->permission->method('accounts', 'read')->access()): ?>
+            <div class="form-group">
+                <a href="<?php echo base_url("accounts/AccPredefinedController/predefined_accounts") ?>"
+                    class="btn btn-success btn-md pull-right"><i class="fa fa-list" aria-hidden="true"></i>
+                    <?php echo display('predefined_accounts'); ?></a>
+            </div>
+            <?php endif; ?>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-12">
+        <?php // echo include($this->load->view('accounts/header/voucher_header')) 
+        ?>
+        <div class="panel panel-bd lobidrag">
+            <div class="panel-heading ">
+                <div class="panel-title">
+                    <h4><?php echo $title ?></h4>
+                </div>
+            </div>
+            <div class="panel-body" style="margin-top: 10px;">
+                <?php echo  form_open_multipart('accounts/AccPredefinedController/predefined_save') ?>
+                <div class="col-md-6">
+                    <div class="form-group mb-2 mx-0 row">
+                        <label for="acc_coa_id"
+                            class="col-sm-3 col-form-label ps-0"><?php echo display('predefined_name'); ?><span
+                                class="text-danger">*</span></label>
+                        <div class="col-lg-8">
+                            <input class="form-control" name="predefined_seeting_name" id="predefined_seeting_name"
+                                required />
+                        </div>
+                    </div>
+                    <div class="form-group mb-2 mx-0 row">
+                        <label for="acc_coa_id"
+                            class="col-sm-3 col-form-label ps-0"><?php echo display('description'); ?></label>
+                        <div class="col-lg-8">
+                            <textarea class="form-control" name="predefined_seeting_description"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group mb-2 mx-0 row">
+                        <label for="status" class="col-sm-3 col-form-label"><?php echo display('status') ?> <i
+                                class="text-danger">*</i></label>
+                        <div style="margin-top: 8px;" class="col-sm-8">
+                            <label class="radio-inline ">
+                                <input type="radio" name="is_active" value="1" checked="checked" id="is_active"
+                                    required>
+                                <?php echo display('active') ?>
+                            </label>
+                            <label class="radio-inline ">
+                                <input type="radio" name="is_active" value="0" id="is_active" required>
+                                <?php echo display('inactive') ?>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group mb-2 mx-0 row">
+                        <label for="predefined_name"
+                            class="col-sm-3 col-form-label ps-0"><?php echo display('predefined_accounts'); ?><span
+                                class="text-danger">*</span></label>
+                        <div class="col-lg-8">
+                            <select name="predefined_id" id="predefined_id" class="form-control select-basic-single"
+                                required>
+                                <option value=""><?php echo  display('select_one'); ?></option>
+                                <?php foreach ($predefineCode as $key => $predefine) { ?>
+                                <option value="<?php echo  $predefine->id; ?>">
+                                    <?php echo $predefine->predefined_name; ?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group mb-2 mx-0 row">
+                        <label for="coa_head"
+                            class="col-sm-3 col-form-label ps-0"><?php echo display('coa_head'); ?><span
+                                class="text-danger">*</span></label>
+                        <div class="col-lg-8">
+                            <select name="acc_coa_id" id="acc_coa_id" class="form-control select-basic-single" required>
+                                <option value=""><?php echo  display('select_one'); ?></option>
+                                <?php foreach ($allheads as $key => $allhead) { ?>
+                                <option value="<?php echo  $allhead->id; ?>"><?php echo $allhead->account_name; ?>
+                                </option>
+                                <?php } ?>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-success submit_button pull-right"
+                        id="create_submit"><?php echo display('save'); ?></button>
+                </div>
+                <?php echo  form_close() ?>
+            </div>
+        </div>
+    </div>
+</div>

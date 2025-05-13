@@ -1,0 +1,19 @@
+application/ci_sessions/
+application/cache/temp/
+
+application/cache/**/temp/
+
+application/config/database.php
+vendor/
+assets/data/outgoing/backup.sql
+system/
+captcha/
+.vscode/
+
+#ignore log files
+*.zip
+*.rar
+*.jpg
+*.jpeg
+*.png
+*.xlsx

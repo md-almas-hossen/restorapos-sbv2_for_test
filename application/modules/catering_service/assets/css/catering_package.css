@@ -1,0 +1,27 @@
+/* new css start here  */
+.rounded-12 {
+  border-radius: 12px;
+}
+/* .inputPackage.form-control {
+    border-radius: 4px;
+    border: 1px solid #dbdbdb;
+    background: #fcfcfc;
+    height: 45px;
+    box-shadow: none;
+    padding: 10px 15px;
+    color: #585858;
+    font-size: 16px;
+    font-weight: 400;
+  } */
+.mt_0 {
+  margin-top: 0px !important;
+}
+.pagination > .active > a,
+.pagination > .active > a:focus,
+.pagination > .active > a:hover {
+  z-index: 3;
+  color: #fff;
+  cursor: default;
+  background-color: #019868;
+  border-color: #019868;
+}

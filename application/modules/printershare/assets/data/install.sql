@@ -1,0 +1,7 @@
+INSERT INTO `language` (`id`, `phrase`, `english`) VALUES (NULL, 'pintersetting', 'Printer Setting'), (NULL, 'invoiceprinter', 'Invoice Printer'), (NULL, 'printerport', 'IP Port'), (NULL, 'autop', 'Autometic'), (NULL, 'manual', 'Manual'), (NULL, 'automanual', 'Both Manual & Autometic');
+UPDATE `setting` SET `socketenable` = '1' WHERE `setting`.`id` = 2;
+
+INSERT INTO sec_menu_item (menu_title, page_url, module, parent_menu, is_report, createby, createdate) VALUES ('pintersetting', 'printer', 'printershare', '0', '0', '3', '2020-12-03 00:00:00');
+INSERT INTO sec_menu_item (menu_title, page_url, module, parent_menu, is_report, createby, createdate) SELECT 'kitchen_printers', 'printersetting', 'printershare', sec_menu_item.menu_id, '0', '3', '2020-12-03 00:00:00' FROM sec_menu_item WHERE sec_menu_item.menu_title = 'printershare';
+INSERT INTO sec_menu_item (menu_title, page_url, module, parent_menu, is_report, createby, createdate) SELECT 'invoiceprinter', 'invoiceprinter', 'printershare', sec_menu_item.menu_id, '0', '3', '2020-12-03 00:00:00' FROM sec_menu_item WHERE sec_menu_item.menu_title = 'printershare';
+INSERT INTO sec_menu_item (menu_title, page_url, module, parent_menu, is_report, createby, createdate) SELECT 'pintersetting', 'printdialog', 'printershare', sec_menu_item.menu_id, '0', '3', '2020-12-03 00:00:00' FROM sec_menu_item WHERE sec_menu_item.menu_title = 'printershare';

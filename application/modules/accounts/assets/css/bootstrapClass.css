@@ -1,0 +1,26 @@
+.mx-2 {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.mt-2 {
+    margin-top: 8px;
+
+}
+
+.mt-3 {
+    margin-top: 12px;
+
+}
+
+.g-4 {
+    padding: 12px;
+}
+
+.m-1 {
+    margin: 4px;
+}
+
+.d-none {
+    display: none;
+}

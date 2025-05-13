@@ -1,0 +1,16 @@
+body {
+    		 background-color: #fff !important; 
+			 background:none !important;
+		}
+		@media print {
+			tr.voucherList {
+				background-color: #ececec !important;
+				-webkit-print-color-adjust: exact;
+			}
+			
+			
+		}
+.getpreport .total_ammount{text-align: right;}
+
+.getpreport-footer .total_purchase{text-align:right;font-size:14px !Important;}
+.getpreport-footer .totalprice{text-align: right;}

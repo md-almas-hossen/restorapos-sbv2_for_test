@@ -1,0 +1,3 @@
+INSERT INTO `payment_method` (`payment_method_id`, `payment_method`, `is_active`,`modulename`) VALUES ('17', 'razorpay', '1','razorpay');
+INSERT INTO `paymentsetup` (`setupid`, `paymentid`, `marchantid`, `password`, `email`, `currency`, `Islive`, `status`,`edit_url`) VALUES ('17', '17', 'rzp_test_UympU7Wy365QIh','ET8IK2is287FbL2JJ2J7ZzVH', NULL, 'INR', '0', '1','razorpay/rozarback/editpayment');
+INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`) VALUES('102010416', 'razorpay', 'Online Payment', 2, 1, 1, 0, 'A', 0, 0, 0.00, '3', NOW(), '', '0000-00-00 00:00:00');

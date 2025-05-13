@@ -1,0 +1,138 @@
+	.placeHolder div { background-color:white!important; border:dashed 1px gray !important; }
+	.boxpad{padding:20px;float:none; width:120px; height:100px; display:inline-block}
+    .tablemainbox{max-width: 50%;}
+	#gallery{min-height:600px;}
+	#gallery img{width:100%; border:none !important;background: none !important;}
+	.tabmaincontent{position:relative;}
+	/*//new style*/
+	.restora-table {
+  width: 120px;
+  height: 120px;
+  padding: 10px;
+  border-radius: 16px;
+  color: #333;
+  border: 1px solid #ddd;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  margin: 20px;
+}
+.table-round {
+  border-radius: 50%;
+}
+
+.table-rotate {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.table-rotate .table-inner {
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.table-lg {
+  width: 240px;
+}
+
+.table-xl {
+  width: 360px;
+}
+
+.table-number {
+  margin-bottom: 5px;
+}
+
+.table-user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.table-user svg {
+  margin-right: 3px;
+}
+.ui-resizable-e {
+    cursor: e-resize;
+    width: 7px;
+    right: -5px;
+    top: 0;
+    height: 100%;
+}
+.ui-resizable-handle {
+    position: absolute;
+    font-size: 0.1px;
+    display: block;
+    -ms-touch-action: none;
+    touch-action: none;
+}
+.ui-resizable-s {
+    cursor: s-resize;
+    height: 7px;
+    width: 100%;
+    bottom: -5px;
+    left: 0;
+}
+.ui-resizable-se {
+    cursor: se-resize;
+    width: 12px;
+    height: 12px;
+    right: 1px;
+    bottom: 1px;
+}
+
+@media(min-width: 768px) and (max-width: 991px) {
+  .restora-table {
+    width: 90px;
+    height: 90px;
+    margin: 10px;
+    font-size: 11px;
+  }
+
+  .table-lg {
+    width: 180px;
+  }
+
+  .table-xl {
+    width: 270px;
+  }
+
+}
+
+@media(min-width: 922px) and (max-width: 1199px) {
+  .restora-table {
+    width: 100px;
+    height: 100px;
+    margin: 15px;
+    font-size: 13px;
+  }
+
+  .table-lg {
+    width: 200px;
+  }
+
+  .table-xl {
+    width: 300px;
+  }
+
+}
+
+
