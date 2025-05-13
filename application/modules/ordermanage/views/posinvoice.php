@@ -992,7 +992,8 @@
                 <div class="middle-data linehight">
                     <div class="text-center linehight">
                         <h5 class="item-title linehight fontsizepx" style="font-size:18px; font-weight:bold;">
-                            <?php echo (!empty($posinvoiceTemplate->waiter)?$posinvoiceTemplate->waiter:'Waiter:'.$waiter->firstname.' '.$waiter->lastname);?>
+                            <?php //echo (!empty($posinvoiceTemplate->waiter)?$posinvoiceTemplate->waiter:'Waiter:'.$waiter->firstname.' '.$waiter->lastname);?>
+                            <?php echo (!empty($posinvoiceTemplate->waiter) ? 'Waiter: ' . $waiter->firstname . ' ' . $waiter->lastname : ''); ?>
                         </h5>
                     </div>
                 </div>

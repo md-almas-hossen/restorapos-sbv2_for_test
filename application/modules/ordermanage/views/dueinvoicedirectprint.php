@@ -987,7 +987,8 @@ $recalculate_vat = $this->db->select('recalculate_vat')->from('tbl_invoicesettin
                 <div class="middle-data linehight"style="margin-bottom:8px;">
                     <div class="text-center linehight">
                         <h5 class="item-title linehight fontsizepx" style="font-size:18px; font-weight:bold;">
-                            <strong><?php echo ('Waiter:' . @$waiter->firstname . ' ' . @$waiter->lastname); ?></strong>
+<!--                            <strong>--><?php //echo ('Waiter:' . @$waiter->firstname . ' ' . @$waiter->lastname); ?><!--</strong>-->
+                            <?php echo (!empty($posinvoiceTemplate->waiter) ? 'Waiter: ' . $waiter->firstname . ' ' . $waiter->lastname : ''); ?>
                         </h5>
                     </div>
                 </div>
